@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="https://www.css-gradient.com/?c1=b55019&c2=eaa275&gt=l&gd=dtl">
+    <link rel="stylesheet" href="style/all.min.css">
+    <link rel="stylesheet" href="style/bootstrap.min.css">
+    <link rel="stylesheet" href="style/style.css">
+    <title>BookMark</title>
+</head>
+<body>
+    <div class="container d-flex flex-column justify-content-center align-items-center text-center">
+        <h1 class="py-5 position-relative">Bookmarker</h1>
+
+        <div class="bookmark w-100 my-5 mb-5 position-relative">
+            <div class="title d-flex flex-row justify-content-center align-items-center mb-4">
+                <h2 class="gx-5">
+                <i class="fa-regular fa-bookmark"></i>
+                Bookmark your favorite sites
+                <i class="fa-regular fa-bookmark"></i>  
+            </h2>         
+            </div>
+
+
+            <div class="form-floating mb-3">
+                <div class="labello fw-semibold pb-2 text-start">
+                    <i class="fa-solid fa-book-bookmark"></i>
+                    <label for="siteName">Site Name</label>
+                </div>
+                <input  oninput="siteNameValidation()" type="text" class="form-control" id="siteName" placeholder="siteName">
+              </div>
+              <div class="alert alert-danger d-none" id="nameError">Site name must contain at least 3 characters</div>
+              <div class="alert alert-success d-none" id="emptyError">Please fill this field</div>
+
+
+
+
+
+              <div class="form-floating">
+                <div class="labello fw-semibold pb-2 text-start">
+                    <i class="fa-solid fa-link"></i>
+                    <label for="siteUrl">Site Url</label>
+                </div>
+                <input oninput="urlValidation()" type="url" class="form-control" id="siteUrl" placeholder="siteUrl">
+              </div>
+
+              <div class="alert alert-danger d-none" id="urlError">Site URL must be a valid one</div>
+              <div class="alert alert-success d-none" id="emptyUrlError">Please fill this field</div>
+
+
+
+              <button id="submitBtn" class="btn mt-3 px-5 py-2" onclick="submitWebSite()">Submit</button>
+              <button id="updateBtn" class="btn mt-3 px-5 py-2 d-none" onclick="updateElement()">Update</button>
+
+
+             
+
+        </div>
+        
+        <table class="table text-center mt-5">
+            <thead>
+            <tr>
+                <th>Index</th>
+                <th>Website Name</th>
+                <th>Visit</th>
+                <th>Delete</th>
+                <th>Search</th>
+                <th>Update</th>
+
+
+            </tr>
+        </thead>
+
+        <tbody id="tableContent">
+        </tbody>
+        </table>
+    </div>
+
+
+
+
+
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
